@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TIA</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+
+        <h1>Bem vindo!</h1>
+        <form name="myform" action="" onsubmit="return validateForm()">
+            <label for="matricula">Matrícula:</label><br>
+            <input type="number" id="matricula" name="matricula"><br><br>
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha"> <br><br>
+            <label for="Unidade">Selecione uma unidade</label><br>
+            <input list="Unidade" id="Unidade" name="Unidade" ><br><br>
+            <datalist id="Unidade">
+                <option value="Campus1">
+                <option value="Campus2">
+                <option value="Campus3">
+                <option value="Campus4">
+                <option value="Campus5">
+            </datalist>
+            <br><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
+
+<script>
+    function validateForm() { 
+        var matricula = document.forms["myForm"]["matricula"].value;
+        var matriculasize = document.getElementById("matricula").size;
+        var senha = document.forms["myForm"]["senha"].value;
+        var unidade = document.forms["myForm"]["Unidade"].value;
+        if (matriculasize == 8 && senha != "" && unidade != "") {
+            return true;
+        } else { 
+            return false;
+        }
+    }
+</script>
